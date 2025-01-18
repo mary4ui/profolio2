@@ -1,10 +1,9 @@
-<!-- قسم الخدمات -->
 <section id="services" class="py-5 bg-dark">
     <div class="container">
         <!-- العنوان الرئيسي للقسم -->
         {{-- <h2 class="text-center mb-5" data-aos="fade-up">Our Services</h2> --}}
-        <h1 style="color: rgb(92, 153, 0)">* Cooperation  </h1>
-    <p> Designing solutions <span style="color: rgb(177, 177, 177)"> customized to meet your requirements</span></p>
+        <h1 style="color: rgb(92, 153, 0);font-size:20px">* Cooperation  </h1>
+    <p style=";font-size:30px"> Designing solutions <span style="color: rgb(177, 177, 177);font-size:30px"> customized to meet your requirements</span></p>
 
 
 

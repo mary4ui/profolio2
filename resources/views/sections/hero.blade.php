@@ -54,7 +54,7 @@
                 
                  <!-- CV Download Button with Icon -->
                 <a href="#" class="btn d-flex align-items-center" style="color: rgb(93, 93, 93)"><i class="bi bi-download d-flex "></i>
-                    <img src="{{asset('icons/dd.png')}}" alt="" style="width: 20px; margin-right: 5px;">
+                    <img src="{{asset('')}}" alt="" style="width: 20px; margin-right: 5px;">
                     Download My CV
                 </a>
             </div>

@@ -81,6 +81,12 @@
         @include('sections.portfolio')
         <!-- Services Section -->
         @include('sections.services')
+        <!-- experience Section -->
+        @include('sections.experience')
+        <!-- experience Section -->
+        @include('sections.education')
+        <!-- experience Section -->
+        @include('sections.expir')
     </div>
     <!-- Contact Section -->
     @include('sections.contact')

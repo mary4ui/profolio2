@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #3c3c3c;
+    background-color: #120e1c;
     color: white;
     margin: 0;
     padding: 0;
@@ -118,7 +118,6 @@ body {
     .sections-container {
         grid-template-columns: 1fr;
     }
-
     .profile-image {
         max-width: 300px;
     }
@@ -160,6 +159,9 @@ body {
     text-align: center;
     color: #ffffff;
 }
+.bi{
+    color: green;
+}
 @media(max-width:758px){
     .stats{
         flex-direction: column;
@@ -180,17 +182,22 @@ body {
     color: #cccccc;
 }
 
+/* قسم الخبرات */
+
 
 /*about تعديل قسم ال */
 #about {
     flex: 2;
+    flex-direction: column;
+    flex-grow: 1;
     border-radius: 20px;
     animation: glow 4s infinite;
     max-height: 600px;
-    min-height: 200px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     max-width: 120%;
+    overflow: hidden;
     align-items: flex-start;
     text-align: left;
     position: relative;
@@ -216,36 +223,48 @@ body {
     position: relative;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 90%;
-    max-height: 40% ;
+    max-width: 100%;
+    max-height:auto ;
+    width: 80%;
+    height: auto;
+    align-items: center; 
 }
-
-
-.moving-image .row {
-    display: flex;
-    justify-content: space-between;
+.image-box img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
-
 .moving-image img {
     position: relative;
+    display: flex;
+    width:30%;
+    height: auto;
     padding-top: 10px;
-    width:40%;
-    height: auto;
-    animation: moveleft 15s linear infinite;
+    animation: moveleft 10s linear infinite;
 }
-
 @keyframes moveleft {
-    0% { left: 100%; }
-    100% { left: -100%; }
+    0% {transform:translateX(100%); }
+    50% {transform:translateX(0%); }
+    100% { transform:translateX(-100%); }
 }
-
 .static-image img {
-    width: 20%;
+    position: relative;
+    display: flex;
+    width:30%;
     height: auto;
-    padding-left: 10px;
     padding-bottom: 20px;
+    animation: moveRight 10s linear infinite;
+}
+@keyframes moveRight {
+    0% {transform:translateX(-100%) ; }
+    50% {transform:translateX(0%) ; }
+    100% {transform:translateX(100%); }
 }
 
+.moving-image img ,.static-image img{
+    object-fit: contain;
+    display: flex;
+}
 .circle-container {
     display: flex;
     justify-content: center;
@@ -394,7 +413,7 @@ body {
     flex: 1; 
     border-radius: 20px;
     animation: glow 4s infinite;
-    min-height: 100px;
+    min-height: 500px;
     background-color: #20202b; 
     color: #ffffff; 
     display: flex;
@@ -403,9 +422,6 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
-    
-
-
 /* تنسيق القائمة */
 .custom-list {
     list-style: none; 
@@ -466,9 +482,10 @@ body {
 
 }
 .card{
-    background-color: #20202b;
+    background-color: #17171f;
     border: 2px solid white;
     border-radius: 10px;
+    border-color: #c4c4c4;
 }
 .card:hover{
     transform: scale(1.05);
@@ -490,23 +507,10 @@ body {
     word-spacing: 4px;
     text-align: center;
 }
-/* contact siection */
-#contact{
-    border-radius: 20px;
-    animation: glow 4s infinite;
-    min-height: 100px;
-    background-color: #20202b; 
-    color: #ffffff; 
-    display: flex;
-    flex: 1; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 20px;
-    box-sizing: border-box;
+/* contact */
 
-}
-    
 .form-control {
+    color: #ffffff;
     background-color: #20202b ;
     transition: all 0.3s ease;
     border-color: #bbbbbb;
@@ -516,10 +520,231 @@ body {
     border-color: #4caf50;
     outline: none;
 }
+/* زر التحقق */
+.custom-checkbox{
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border: 1px solid #28a745;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.custom-checkbox:checked{
+    background-color: #343030;
+    border-color:3px #4b6f51;
+}
+.custom-checkbox:checked::before{
+    content: '✓';
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+    border-color: rgb(238, 238, 238);
+} 
+.form-check-label{
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 8px;
+}
+/* زر الارسال */
 .custom-button{
-    border:-1px solid white;
     background-color:#1ca533 ;
-    color: #000000;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+.bi-send{
+    color: #110e0e;
+}
+/* ايقونات التواصل */
+.contact-info .icon{
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+.contact-info .info-title{
+    color:#bbb ;
+    font-size: 1rem;
+    margin: 0;
+}
+.contact-info .info-detail{
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: hwb(0 99% 0%);
+}
+.contact-info .d-flex{
+    display: flex;
+    align-items: center;
+}
+.icon-box {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d2227;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    color: #28a745; 
+}
+    
+@media (min-width: 768px) {
+    .contact-info {
+        padding-left: 80px; 
+        padding-top: 80px;
+    }
+}
+/* تصميم experience */
+#experience{
+    border-radius: 20px;
+    animation: glow 4s infinite;
+    min-height: 100px;
+    background-color: #20202b; 
+    color: #ffffff; 
+    display: flex;
+    width:100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.experience-box{
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    display: flex;
+    transition: 0.3s ease-in-out;
+}
+.experience-box:hover{
+    background-color: #202d22;
+    border-color: #28a745;
+}
+
+.badge{
+    border: 1px solid gray;
+    font-size: 15px;
+    color: gray;
+    padding: 10px 15px;
+}
+.skills-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.points-list li{
+    margin-top: 12px;
+    line-height: 1.8;
+    
+}
+/* تصميم education */
+#education{
+    flex: 1;
+    border-radius: 20px;
+    animation: glow 4s infinite;
+    min-height: 100px;
+    background-color: #20202b; 
+    color: #ffffff; 
+    width:100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff; /* لون العنوان */
+    margin-bottom: 20px;
+    text-align: left;
+}
+.section-title .icon{
+    font-size: 2rem;
+}
+
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.timeline li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline li:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: -20px;
+    width: 2px;
+    background: #555;
+}
+
+.timeline li:last-child:before {
+    bottom: 0; /* إنهاء الخط */
+}
+
+.year {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgba(147, 147, 147, 0.8); 
+    flex: 0 0 100px; /* لتحديد المسافة */
+}
+
+.details {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    display: block;
+}
+.timeline li:nth-child(1) .details{opacity: 1;}
+.timeline li:nth-child(2) .details{opacity: 0.8;}
+.timeline li:nth-child(3) .details{opacity: 0.6;}
+.timeline li:nth-child(4) .details{opacity: 0.4;}
+.timeline li:nth-child(5) .details{opacity: 0.2;}
+
+.timeline li:before{
+    content: "•";
+    font-size: 1.8rem;
+    color: #1ca533;
+    left: 7px;
+    top: 0;
+
+}
+@media(max-width:768px){
+    .year{
+        flex: 0 0 80px;
+        font-size: 0.9rem;
+    }
+    .section-title{
+        font-size: 2.5rem;
+    }
+    .timeline li{
+        gap: 10px;
+    }
+}
+#expir{
+    flex: 1;
+    border-radius: 20px;
+    animation: glow 4s infinite;
+    min-height: 100px;
+    background-color: #20202b; 
+    color: #bbbbbb; 
+    width:100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
